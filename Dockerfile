@@ -12,6 +12,6 @@ RUN echo 'source ~/.bash-git-prompt/gitprompt.sh' >> ~/.bashrc
 RUN echo 'GIT_PROMPT_ONLY_IN_REPO=1' >> ~/.bashrc
 ADD ./.bash_aliases /root/.bash_aliases
 
-RUN apt-get update && apt-get -y autoremove && apt-get clean && rm -rf /var/lib/apt/lists/*
+RUN apt-get update && apt-get -y autoremove && apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 WORKDIR /root
