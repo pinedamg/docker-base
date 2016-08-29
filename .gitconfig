@@ -1,0 +1,39 @@
+[user]
+	name = Pineda Mauricio Gaston
+	email = pinedamg@gmail.com
+[web]
+	browser = google-chrome
+[core]
+	editor = vim
+	whitespace = fix,-indent-with-non-tab,trailing-space,cr-at-eol
+	excludesfile = ~/.gitignore
+[color "branch"]
+	current = yellow bold
+	local = green bold
+	remote = cyan bold
+[color "diff"]
+	meta = yellow bold
+	frag = magenta bold
+	old = red bold
+	new = green bold
+	whitespace = red reverse
+[color "status"]
+	added = green bold
+	changed = yellow bold
+	untracked = red bold
+[diff]
+	tool = vimdiff
+[alias]
+	pulldev = pull origin develop
+	pushdev = push origin develop
+	pullmaster = pull origin master
+	pushmaster = push origin master
+	#############
+	s = status
+	cam = commit -am
+	#############
+	assume = update-index --assume-unchanged
+	unassume = update-index --no-assume-unchanged
+	assumed = "!git ls-files -v | grep ^h | cut -c 3-"
+	unassumeall = !git assumed | xargs git update-index --no-assume-unchanged
+	assumeall = "!git st -s | awk {'print $2'} | xargs git assume"

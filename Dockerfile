@@ -11,7 +11,8 @@ RUN git clone https://github.com/magicmonty/bash-git-prompt.git ~/.bash-git-prom
 RUN echo '. /etc/bash_completion' >> ~/.bashrc
 RUN echo 'source ~/.bash-git-prompt/gitprompt.sh' >> ~/.bashrc
 RUN echo 'GIT_PROMPT_ONLY_IN_REPO=1' >> ~/.bashrc
-ADD ./.bash_aliases /root/.bash_aliases
+COPY ./.gitconfig /root/.gitconfig
+COPY ./.bash_aliases /root/.bash_aliases
 RUN echo 'source ~/.bash_aliases' >> ~/.bashrc
 
 RUN apt-get update && apt-get -y autoremove && apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
