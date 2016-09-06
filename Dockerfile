@@ -4,7 +4,6 @@ MAINTAINER MPineda <pinedamg@gmail.com>
 ENV DEBIAN_FRONTEND noninteractive
 
 RUN apt-get update
-#RUN apt-get -y install vim ssh curl git bash-completion tar ca-certificates wget
 RUN apt-get -y install vim curl git bash-completion
 RUN git clone https://github.com/magicmonty/bash-git-prompt.git ~/.bash-git-prompt --depth=1
 
